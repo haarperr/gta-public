@@ -1,0 +1,13 @@
+#modal {
+    width: 70vw;
+    max-width: 800px;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-prefix {
+    top: -1px!important;
+}
+
+::ng-deep mat-dialog-container {
+    background-color: #151515 !important;
+    color: white!important;
+    border: 1px solid #868686;
+ }

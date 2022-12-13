@@ -1,0 +1,36 @@
+body {
+  width: 98%;
+  height: 98%;
+}
+
+
+#container {
+  position: absolute;
+  bottom: 4%;
+  right: 1%;
+  /* transform: translateX(-50%); */
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.progress-ring {
+  
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+svg text {
+  font-family: 'Font Awesome 5 Free';
+}
+
+#id {
+  font-family: 'Comic Sans MS';
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

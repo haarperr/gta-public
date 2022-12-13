@@ -1,0 +1,19 @@
+<div class="app">
+    <div class="row mt-5 pt-3 px-4">
+        <h1 class="text-center pt-5" style="margin-top: 120px; margin-bottom: -40px;">555-{{to}}</h1>
+        <div class="ring mx-auto" style="margin-top: -50px;">
+            <span></span>
+        </div>
+        
+        <h1 class="text-center mt-4 pt-5">{{contact}}</h1>
+        <h3 class="text-center mt-3">{{counter}}</h3>
+        <div class="call-btn position-absolute">
+            <div class="start" [ngClass]="{focus: focused===0}" *ngIf="receive">
+                <mat-icon matListIcon>call</mat-icon>
+            </div>
+            <div class="stop" [ngClass]="{focus: focused===1, solo : receive==false }">
+                <mat-icon matListIcon>call_end</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>

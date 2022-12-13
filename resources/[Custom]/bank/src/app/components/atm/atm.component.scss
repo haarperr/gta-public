@@ -1,0 +1,37 @@
+.btn {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 5px;
+}
+.action-rapide .btn {
+    width: 100%;
+    text-align: end;
+    margin-bottom: 10px;
+}
+
+.notif {
+    background: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.notif-error {
+    background: #a84d4d;
+    border: 1px solid red;
+    color: white;
+}
+.notif-error .toast-header {
+    background: #e1090a;
+    color: white;
+}
+
+
+.notif-success {
+    background: #55a84d;
+    border: 1px solid green;
+    color: white;
+}
+.notif-success .toast-header {
+    background: #2d5f29;
+    color: white;
+}

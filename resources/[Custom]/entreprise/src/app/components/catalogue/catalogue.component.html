@@ -1,0 +1,14 @@
+<div id="Home"> 
+    <h2>Catalogue</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-3 text-center mb-4" *ngFor="let item of items">
+            <h4>{{item.name}}</h4>
+            <img [src]="'assets/'+item.icon" alt="" class="p-1 catalogueImg">
+            <p>{{item.buyPrice | currency}}</p>
+            <p><i>Quantité max : {{item.buyMaxQuantity}}</i></p>
+            <input [id]="'input'+item.id" type="number" min="1" [max]="item.buyMaxQuantity" class="inputQuantity" value="1">
+            <button mat-flat-button (click)="addToBasket(item)"><mat-icon>arrow_right</mat-icon></button>
+        </div>
+    </div>
+</div>

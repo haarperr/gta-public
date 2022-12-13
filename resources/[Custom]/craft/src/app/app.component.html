@@ -1,0 +1,47 @@
+<div *ngIf="isVisible" id="Main" class="row">
+    <mat-drawer-container>
+        <div class="col-12 text-end" style="height: 60px; margin-bottom: -60px; z-index: 99;">
+            <button class="btn btn-lg" id="closeBtn" (click)="close()"><mat-icon>power_settings_new</mat-icon></button>
+        </div>
+        <div class="col-12" style="height: 100%; padding: 0;">
+            <div id="Content">                    
+                <h1>Craft</h1>
+                <hr>
+                <div class="row crafts">
+                    <div class="col-3 text-center mx-3 my-2 craftItem" (click)="previewCraft(item)" *ngFor="let item of crafts">
+                        <img [src]="'assets/'+item.Item.icon" alt="" class="p-1 mt-3 craftImg">
+                        <h4>{{item.Item.name}} x{{item.quantity}}</h4>
+                        <div class="row craftRecette">
+                            <div class="col-4 m-auto" *ngFor="let rec of item.CraftRecettes">
+                                <img [src]="'assets/'+rec.Item.icon" alt="" class="p-1 recetteImg"> x {{rec.quantity}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <mat-drawer class="sidenav-content" #sidenav mode="over" position="end">
+            <ng-container *ngIf="craft" class="d-flex">
+                <img [src]="'assets/'+craft.Item.icon" alt="" class="p-1 craftImg d-flex m-auto">
+                <h4 class="text-center mb-5">{{craft.Item.name}} x {{craft.quantity}}</h4>
+                <p *ngFor="let rec of craft.CraftRecettes">
+                    {{rec.quantity}} x <img [src]="'assets/'+rec.Item.icon" alt="" class="p-1 recetteImg"><span [ngClass]="{'no-item': !rec.inventory || rec.inventory == 0}"> {{rec.Item.name}} <span *ngIf="rec.inventory && rec.inventory > 0 && false">({{rec.inventory}})</span></span>
+                </p>
+                <div class="sidenav-craft">
+                    <input id="inputQuantity" type="number" min="1" [max]="100" class="inputQuantity" [ngClass]="{'inputQuantityDisabled': busy || !craftable}" [(ngModel)]="inputQuantity" [disabled]="busy || !craftable">
+                    <button mat-flat-button class="craftBtn mt-4" (click)="startCraft(craft)" [disabled]="busy || !craftable"><mat-icon>construction</mat-icon> Fabriquer</button>
+                    <span class="timer text-muted"><mat-icon>timer</mat-icon> {{craft.duration}}s </span>
+                </div>
+            </ng-container>
+        </mat-drawer>
+    </mat-drawer-container>
+    <div class="crafting d-flex" *ngIf="busy" [@myAnimation]>
+        <p>Fabrication... <span *ngIf="craftQuantity > 1">{{craftQuantity}} x</span> <mat-icon>timer</mat-icon> {{craftDuration}}s</p>
+        <button mat-mini-fab (click)="stopCraft()"><mat-icon>close</mat-icon></button>
+    </div>
+</div>
+<div id="CraftingHidden" class="crafting d-flex" *ngIf="!isVisible && busy" [@myAnimation]>
+    <p>Fabrication... <span *ngIf="craftQuantity > 1">{{craftQuantity}} x</span> <mat-icon>timer</mat-icon> {{craftDuration}}s</p>
+    <button mat-mini-fab (click)="stopCraft()"><mat-icon>close</mat-icon></button>
+</div>

@@ -1,0 +1,39 @@
+
+.row {
+    margin-left: 0;
+}
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: white;
+}   
+
+.list-group-item {
+    color: white;
+    border-radius: 20px;
+}
+
+.list-group {
+    max-height: 660px;
+    overflow: hidden;
+}
+
+.badge {
+    margin: auto 0;
+    font-size: 14px;
+    background: purple;
+}
+
+.menu-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    background: #1a1a1a;
+    animation-name: slidemenubottom;
+    animation-duration: 0.1s;
+}
+
+@keyframes slidemenubottom {
+    from {transform: translateY(150px);}
+    to {transform: translateY(0px);}
+}
+

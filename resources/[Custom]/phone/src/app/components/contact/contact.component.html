@@ -1,0 +1,30 @@
+<div class="app">
+    <div class="row mt-5 pt-3">
+        <h1 class="px-4">Contacts</h1>         
+        <div class="row p-1">
+            <ul class="list-group">
+                <li class="list-group-item mb-2 fakebtn" [ngClass]="{focused: focusedIndex==-1}">
+                    <h4 class="m-0">Nouveau contact</h4>
+                </li>
+                <ng-container *ngIf="loading;else display" class="text-center">
+                    <mat-spinner class="mx-auto mt-5"></mat-spinner>
+                </ng-container>
+                <ng-template #display>
+                    <li class="list-group-item" *ngFor="let contact of contacts; let i = index" [ngClass]="{focused: contact.focused===true}" [id]="i">
+                        <h2 class="m-0">{{contact.name}}</h2>
+                        <p style="overflow: hidden;">555-{{contact.phone}}</p>
+                    </li>
+                </ng-template>
+            </ul>
+            
+        </div>
+        <div class="menu-bottom p-2 m-0" *ngIf="menuAction">
+            <ul class="list-group mt-2">
+                <li class="list-group-item p-3" [ngClass]="{focused: actions===0}">Appeler</li>
+                <li class="list-group-item p-3" [ngClass]="{focused: actions===1}">Envoyer un message</li>
+                <li class="list-group-item p-3" [ngClass]="{focused: actions===2}">Modifier</li>
+                <li class="list-group-item p-3" [ngClass]="{focused: actions===3}">Supprimer</li>
+            </ul>
+        </div>
+    </div>
+</div>

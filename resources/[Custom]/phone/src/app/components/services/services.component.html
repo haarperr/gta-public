@@ -1,0 +1,27 @@
+<div class="app">
+    <div class="row mt-5 pt-3">
+        <h1 class="px-4">Services</h1>         
+        <div class="row p-1">
+            <ul class="list-group">
+                <li class="list-group-item d-flex" *ngFor="let service of services; let i = index" [ngClass]="{focused: service.focused===true}" [id]="i">
+                    <div class="call-icon">
+                        <mat-icon>{{service.icon}}</mat-icon>
+                    </div>
+                    <div class="d-block">
+                        <div class="d-flex">
+                            <h2 class="m-0 ">{{service.name}}</h2>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="menu-bottom p-2 m-0" *ngIf="menuAction">
+            <ul class="list-group mt-2">
+                <li class="list-group-item p-3 focused" [ngClass]="{focused: action===0}">Message sans position</li>
+                <li class="list-group-item p-3 focused" [ngClass]="{focused: action===1}">Message avec position</li>
+                <li class="list-group-item p-3 focused" [ngClass]="{focused: action===2}">Message anonyme</li>
+            </ul>
+        </div>
+    </div>
+</div>

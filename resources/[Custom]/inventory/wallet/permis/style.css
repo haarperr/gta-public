@@ -1,0 +1,38 @@
+body {
+    width: 400px;
+    height: 200px;
+    background: lightblue;
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h2, p { 
+    margin: 0;
+}
+
+.sb { 
+    justify-content: space-between;
+}
+
+#man {
+    width: 90px;
+    height: 90px;
+    margin: 30px 20px 0 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+.mt-1 {
+    margin-top: 5px;
+}
+.mt-2 {
+    margin-top: 10px;
+}

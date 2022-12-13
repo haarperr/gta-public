@@ -1,0 +1,252 @@
+/* This applies to all elements (bad practice) */
+* {
+  color: #fff;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+@font-face {
+  font-family: Digit;
+  src: url(DS-DIGI.TTF);
+}
+
+html {
+  /* background: black; */
+  /* background: url('https://images.frandroid.com/wp-content/uploads/2020/05/gta-v.jpg'); */
+}
+
+
+body {
+  width: 98%;
+  height: 98%;
+}
+
+
+/* This css centers at the middle of the screen */
+#container {
+	padding: 10px;
+	text-shadow: 2px 2px 5px #424242;
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  bottom: 2%;
+  right: 4%;
+  font-size: 45px;
+	text-align: center;
+  color: #fff;
+  transform: translate(-30%,-10%) rotate(3deg) skew(-5deg);
+  filter: drop-shadow(0px 0px 50px black);
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #container {  
+    bottom: 2%;
+    right: 4%;
+  }
+}
+
+@media (min-aspect-ratio: 18/9) {
+  #container {  
+    bottom: 5%;
+    right: 20%;
+  }
+}
+
+.small {
+	font-size: 25px;
+}
+
+#fuel {
+  position: absolute;
+  right: -10px;
+  top: 20px;
+  filter: drop-shadow(15px 8px 8px black);
+  z-index: 11;
+}
+
+#fuel-bar {
+  position: absolute;
+  transform: rotate(-90deg);
+  background: rgba(255,255,255,0.1);
+  border-radius: 100px;
+  height: 6px;
+  width: 50px;
+  right: 0px;
+}
+
+#fuel-value {
+  /* animation: load 2s normal forwards; */
+  box-shadow: 5px 0px 15px 1px #127a66;
+  border-radius: 100px;
+  background: #1dd3ae;
+  height: 4px;
+  width: 0;
+}
+
+#fuel-txt {
+  position: absolute;
+  bottom: -5px;
+  right: -20px;
+  font-family: Digit;
+  font-size: 20px;
+  --c: #1dd3ae3f;
+  text-shadow: -2px -2px 1px var(--c), -4px -4px 2px var(--c), -10px -10px 8px var(--c), 8px 8px 2px var(--c);
+}
+#fuel-p {
+  font-family: Digit;
+}
+
+.fa-gas-pump {
+  position: absolute;
+  font-size: 0.4em;
+  --c: #1dd3ae3f;
+  text-shadow: -2px -2px 1px var(--c), -4px -4px 2px var(--c), 6px 6px 3px var(--c);
+  top: 8px;
+  right: -10px;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+#rpm {
+  display: flex;
+  position: absolute;
+  left: 125px;
+  top: -10px;
+  filter: drop-shadow(15px 8px 6px black);
+  z-index: 10;
+}
+#rpm #gaugerpm {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 10px solid #1dd3ae;
+  border-bottom: 10px solid transparent;
+  transform: rotate(0deg);
+  display: inline-block;
+  filter: drop-shadow(-4px -4px 2px #1dd3ae3f) drop-shadow(10px 10px 4px #1dd3ae1c);
+}
+#rpm #needlerpm {
+  width: 2px;
+  height: 25px;
+  background: #fff;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  display: inline-block;
+  left: 30px;
+  position: absolute;
+  top: 5px;
+  transform-origin: bottom;
+  filter: drop-shadow(0px 0px 2px #1dd3ae3f);
+}
+#rpm #rpmtxt {
+  font-family: Digit;
+  font-size: 0.4em;
+  position: absolute;
+  bottom: -3px;
+  right: 16px;
+  --c: #1dd3ae3f;
+  text-shadow: -2px -2px 1px var(--c), -4px -4px 2px var(--c), -10px -10px 8px var(--c), 4px 4px 2px #1dd3ae9f;
+}
+
+
+
+
+#speedometer {
+  display: flex;
+  position: absolute;
+  filter: drop-shadow(20px 10px 10px black);
+}
+#speedometer #gaugespeed {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 20px solid #1dd3ae;
+  border-bottom: 20px solid transparent;
+  transform: rotate(0deg);
+  display: inline-block;
+  filter: drop-shadow(-4px -4px 2px #1dd3ae3f) drop-shadow(15px 15px 4px #1dd3ae1c);
+}
+#speedometer #speed {
+  direction: rtl;
+  font-family: Digit;
+  display: inline-block;
+  left: 10px;
+  position: absolute;
+  top: 95px;
+  width: 100px;
+  text-align: center;
+  --c: #1dd3ae3f;
+  text-shadow: -2px -2px 1px var(--c), -4px -4px 2px var(--c), -10px -10px 8px var(--c), 10px 10px 4px var(--c);
+}
+#speedometer #kmh {
+  font-family: Digit;
+  font-size: 0.6em;
+  position: absolute;
+  bottom: -18px;
+  right: -30px;
+  --c: #1dd3ae3f;
+  text-shadow: -2px -2px 1px var(--c), -4px -4px 2px var(--c), -10px -10px 8px var(--c), 6px 6px 2px #1dd3ae67;
+}
+#speedometer #needlespeed {
+  width: 5px;
+  height: 50px;
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  display: inline-block;
+  left: 57px;
+  position: absolute;
+  top: 10px;
+  transform-origin: bottom;
+  filter: drop-shadow(0px 0px 4px #1dd3ae3f);
+}
+
+
+#gear {
+  filter: drop-shadow(20px 10px 8px black);
+  font-family: Digit;
+  display: inline-block;
+  font-size: 1.5em;
+  left: 125px;
+  position: absolute;
+  top: 55px;
+  width: 100px;
+  text-align: center;
+  --c: #1dd3ae3f;
+  text-shadow: -2px -2px 1px var(--c), -4px -4px 2px var(--c), -10px -10px 8px var(--c), 10px 10px 4px var(--c);
+}
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes crash {
+  0% { transform: translate(1px, 1px)}
+  10% { transform: translate(-1px, -2px) }
+  20% { transform: translate(-3px, 0px)}
+  30% { transform: translate(3px, 2px)}
+  40% { transform: translate(1px, -1px)}
+  50% { transform: translate(-1px, 2px) }
+  60% { transform: translate(-3px, 1px)}
+  70% { transform: translate(3px, 1px) }
+  80% { transform: translate(-1px, -1px)}
+  90% { transform: translate(1px, 2px)}
+  100% { transform: translate(1px, -2px) }
+}

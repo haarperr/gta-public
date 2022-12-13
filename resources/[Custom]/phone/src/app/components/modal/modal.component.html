@@ -1,0 +1,9 @@
+<div id="modal" class="d-grid" [formGroup]="form">
+    <mat-form-field appearance="outline" class="d-block">
+        <!-- <mat-label>Input </mat-label> -->
+        <span matPrefix *ngIf="maxLength==4">555-&nbsp;</span>
+        <input matInput formControlName="input" placeholder="Écrire ici..." autocomplete="off" [maxlength]="maxLength" (keyup.enter)="do()" cdkFocusInitial>
+        <mat-hint align="end">{{form.value.input?.length || 0}}/{{maxLength}}</mat-hint>
+    </mat-form-field>
+    <button class="btn btn-outline-success" (click)="do()">OK</button>
+</div>

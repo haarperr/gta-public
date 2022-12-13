@@ -1,0 +1,27 @@
+.list-group-item {
+    color: white;
+    border-radius: 20px;
+}
+
+.list-group {
+    max-height: 635px;
+    overflow: hidden;
+}
+.row {
+    margin-left: 0;
+}
+
+.call-icon {
+    margin-top: 15px;
+    padding: 0 20px 0 5px ;
+}  
+
+.menu-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 130px;
+    width: 100%;
+    background: #1a1a1a;
+    animation-name: slidemenubottom;
+    animation-duration: 0.1s;
+}

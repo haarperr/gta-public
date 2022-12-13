@@ -1,0 +1,332 @@
+<div class="row" id="app" *ngIf="isVisible">
+
+
+
+  
+  <!-- GESTION DU COFFRE -->
+
+  <!-- INVENTAIRE -->
+  <ng-container *ngIf="type==='coffre'" cdkDropListGroup>
+    <div class="col-sm-6 inv">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Mon inventaire - <span>{{totalWeightInventaire | number : '1.2-2'}}kg/{{maxWeighInventaire | number : '1.2-2'}}kg</span></h2>  
+      <ul id="destList" class="list-group" cdkDropList
+      [cdkDropListData]="inventaire"
+      (cdkDropListDropped)="drop($event, 'inventaire')"> 
+        <li class="list-group-item d-flex justify-content-between align-items-start px-4" *ngFor="let item of inventaire | sortObject:'Item'" (contextmenu)="onContextMenu($event, item)" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>     
+    </div>
+    <!-- COFFRE -->
+    <div class="col-sm-6 inv" *ngIf="coffre">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0" *ngIf="type === 'coffre'">Coffre - <span>{{totalWeightCoffre | number : '1.2-2'}}kg/{{coffre.maxWeight | number : '1.2-2'}}kg</span></h2>
+      <ul id="destList" class="list-group" cdkDropList
+      [cdkDropListData]="coffre"
+      (cdkDropListDropped)="drop($event, 'coffre')">
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let item of coffre.InventaireCoffres | sortObject:'Item'" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>    
+    </div>
+  </ng-container>
+
+
+
+
+    
+  <!-- GESTION DU COFFRE VEHICULE -->
+
+  <!-- INVENTAIRE -->
+  <ng-container *ngIf="type==='vehicule'" cdkDropListGroup>
+    <div class="col-sm-6 inv">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Mon inventaire - <span>{{totalWeightInventaire | number : '1.2-2'}}kg/{{maxWeighInventaire | number : '1.2-2'}}kg</span></h2>  
+      <ul id="destList" class="list-group" cdkDropList
+      [cdkDropListData]="inventaire"
+      (cdkDropListDropped)="drop($event, 'inventaire')"> 
+        <li class="list-group-item d-flex justify-content-between align-items-start px-4" *ngFor="let item of inventaire | sortObject:'Item'" (contextmenu)="onContextMenu($event, item)" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>     
+    </div>
+    <!-- COFFRE -->
+    <div class="col-sm-6 inv" *ngIf="coffre">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0" *ngIf="type === 'vehicule'">Véhicule - <span>{{totalWeightCoffre | number : '1.2-2'}}kg/{{100 | number : '1.2-2'}}kg</span></h2>
+      <ul id="destList" class="list-group" cdkDropList
+      [cdkDropListData]="coffre"
+      (cdkDropListDropped)="drop($event, 'coffre')">
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let item of coffre | sortObject:'Item'" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>    
+    </div>
+  </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- GESTION DU SHOP -->
+
+  <!-- INVENTAIRE -->
+  <ng-container *ngIf="type==='shop'" cdkDropListGroup>
+    <div class="col-sm-6 inv">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Mon inventaire - <span>{{totalWeightInventaire | number : '1.2-2'}}kg/{{maxWeighInventaire | number : '1.2-2'}}kg</span></h2>  
+      <ul id="destList" class="list-group" cdkDropList
+      [cdkDropListData]="inventaire"
+      (cdkDropListDropped)="drop($event, 'inventaire')"> 
+        <li class="list-group-item d-flex justify-content-between align-items-start px-4" *ngFor="let item of inventaire | sortObject:'Item'" (contextmenu)="onContextMenu($event, item)" [cdkDragDisabled]="true" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>
+    </div>
+    <!-- SHOP -->
+    <div class="col-sm-6 inv">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Shop - Cash : {{cash  | currency}}</h2>   
+      <ul id="destList" class="list-group" (cdkDragEnter)="test($event)" cdkDropList>
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let item of coffre | sortObject:'Item'" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.Item.price | currency}}</span>
+        </li>
+      </ul>    
+    </div>
+  </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- GESTION DU FOUILLE JOUEUR -->
+
+  <!-- INVENTAIRE -->
+  <ng-container *ngIf="type==='fouille'" cdkDropListGroup>
+    <div class="col-sm-6 inv">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Mon inventaire - <span>{{totalWeightInventaire | number : '1.2-2'}}kg/{{maxWeighInventaire | number : '1.2-2'}}kg</span></h2>  
+      <ul id="destList" class="list-group" (cdkDragEnter)="test($event)" cdkDropList> 
+        <li class="list-group-item d-flex justify-content-between align-items-start px-4" *ngFor="let item of inventaire | sortObject:'Item'" (contextmenu)="onContextMenu($event, item)" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>     
+    </div>
+    <!-- COFFRE -->
+    <div class="col-sm-6 inv" *ngIf="coffre">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0" *ngIf="type === 'fouille'">Fouille
+         <!-- - <span>{{totalWeightCoffre | number : '1.2-2'}}kg/{{30 | number : '1.2-2'}}kg</span> -->
+        </h2>
+      <ul id="destList" class="list-group" (cdkDragEnter)="test($event)" cdkDropList>
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let item of coffre | sortObject:'Item'" cdkDrag>
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>    
+    </div>
+  </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- GESTION DE L'INVENTAIRE -->
+
+  <!-- INVENTAIRE -->
+  <ng-container *ngIf="type==='inventaire'" cdkDropListGroup>
+    <div class="col-sm-6 inv">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Mon inventaire - <span>{{totalWeightInventaire | number : '1.2-2'}}kg/{{30 | number : '1.2-2'}}kg</span></h2>  
+      <ul id="destList" class="list-group" cdkDropList
+      [cdkDropListData]="inventaire"
+      (cdkDropListDropped)="drop($event, 'inventaire')"> 
+        <li class="list-group-item d-flex justify-content-between align-items-start px-4" *ngFor="let item of inventaire | sortObject:'Item'" (contextmenu)="onContextMenu($event, item)" cdkDrag [cdkDragDisabled]="nearestPlayer==0">
+          <span class="badge icon"><img [src]="'./assets/'+item.Item.icon" alt=""></span>
+          <span class="item ms-2 me-auto">
+            {{item.Item.name}}
+          </span>
+          <span class="badge">{{item.quantity}}</span>
+        </li>
+      </ul>     
+    </div>
+    <!-- PORTE FEUILLES -->
+    <div class="col-sm-6 wallet">
+      <h2 class="title text-center text-white p-3 mt-2 mb-0">Portefeuilles</h2>
+      <ul id="wallet" class="list-group wallet-list" cdkDropList>
+        <li class="list-group-item d-flex justify-content-between align-items-start px-5" id="cash" [cdkDragDisabled]="nearestPlayer==0 || cash == 0" cdkDrag>
+          <span class="badge icon"><img src="./assets/dollar.png" alt=""></span>
+          <span class="item ms-2 me-auto">
+            Cash
+          </span>
+          <span class="badge">{{cash | currency }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start px-5">
+          <span class="badge icon"><img src="./assets/cb.png" alt=""></span>
+          <span class="item ms-2 me-auto">
+            Carte de crédit
+          </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start px-5" (contextmenu)="onContextMenuWallet($event, 'id')">
+          <span class="badge icon"><img src="./assets/id.png" alt=""></span>
+          <span class="item ms-2 me-auto">
+            Carte d'identité
+          </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start px-5" (contextmenu)="onContextMenuWallet($event, 'permis')">
+          <span class="badge icon"><img src="./assets/permis.png" alt=""></span>
+          <span class="item ms-2 me-auto">
+            Permis de conduire
+          </span>
+        </li>
+      </ul>
+      <ng-container *ngIf="nearestPlayer>0">
+        <h2 class="title text-center text-white p-3 mt-2 mb-0">Donner à {{ '{' }} {{nearestPlayer}} {{ '}' }}</h2>
+        <ul id="destList" class="list-group give-list" cdkDropList
+        [cdkDropListData]="coffre"
+        (cdkDropListDropped)="drop($event, 'coffre')">
+        </ul>    
+      </ng-container>
+    </div>
+  </ng-container>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- MENU CONTEXTUEL -->
+<div style="visibility: hidden; position: fixed"
+    [style.left]="contextMenuPosition.x"
+    [style.top]="contextMenuPosition.y"
+    [matMenuTriggerFor]="contextMenu">
+</div>
+<mat-menu #contextMenu="matMenu">
+	<ng-template matMenuContent let-item="item">
+    <ng-container *ngIf="item.Item">
+      <button mat-menu-item (click)="useFood(item)" *ngIf="item.Item.type === 'food'">Utiliser</button>
+      <button mat-menu-item (click)="useItem(item)" *ngIf="item.Item.type === 'medical'">Utiliser</button>
+      <button mat-menu-item (click)="useItem(item)" *ngIf="item.Item.type === 'consommable'">Utiliser</button>
+      <button mat-menu-item (click)="useTool(item)" *ngIf="item.Item.type === 'outils'">Utiliser</button>
+      <!-- <button mat-menu-item (click)="useAmmo(item)" *ngIf="item.Item.type === 'ammo'">Utiliser</button> -->
+      <button mat-menu-item (click)="destroy(item)">Détruire</button>
+    </ng-container>
+    <ng-container *ngIf="!item.Item">
+      <button mat-menu-item (click)="seeFromWallet(item)">Voir</button>
+      <button mat-menu-item (click)="showFromWallet(item)">Montrer</button>
+    </ng-container>
+  </ng-template>
+</mat-menu>

@@ -1,0 +1,35 @@
+<div id="Home"> 
+    <h2>Home</h2>
+    <hr/>
+    <h3 class="mb-4">Compte personnel</h3>
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><fa-icon [icon]="faUniversity"></fa-icon> Compte personnel</h5>
+                    <h1 class="card-text">{{ bank | currency}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><fa-icon [icon]="faWallet"></fa-icon> Liquide</h5>
+                    <h1 class="card-text">{{ cash | currency}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<hr class="mt-5"/>
+    <h3 class="mb-4">Comptes professionnels</h3>
+     <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><fa-icon [icon]="faUniversity"></fa-icon> Benny's</h5>
+                    <h1 class="card-text">{{ 595202 | currency}}</h1>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

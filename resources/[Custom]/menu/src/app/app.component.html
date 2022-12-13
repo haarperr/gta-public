@@ -1,0 +1,42 @@
+<div id="menu" *ngIf="isVisible">
+  <div id="menuHeader">
+    <h2 class="text-white text-center p-2">{{title}}</h2>
+  </div>
+  <div id="subTitle">
+      <p class="p-1 d-flex" style="justify-content: space-between;">
+        <span>{{subtitle}}</span>
+        <span class="text-end" *ngIf="displayList.length>1">{{focusedIndex+1}}/{{displayList.length}}</span>
+      </p>
+    </div>      
+  <div id="menuContent">
+    <ul id="menu-list" class="list-group">
+      <li [id]="i" class="list-group-item justify-content-between align-items-start d-flex" [ngClass]="{focused: item.focused === true}" *ngFor="let item of displayList; let i = index">
+        <div class="ms-2 me-auto p-2">
+            {{item.label}}
+        </div>
+        <span class="badge">
+          <mat-icon *ngIf="item.type==='submenu'">keyboard_double_arrow_right</mat-icon>
+          <ng-container *ngIf="item.type==='checkbox'">
+            <mat-icon *ngIf="item.checked">check_box</mat-icon>
+            <mat-icon *ngIf="!item.checked">check_box_outline_blank</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="item.type==='slider'">
+            <mat-icon>chevron_left</mat-icon>
+            <span class="slider-text">{{item.list[item.value]}} </span>
+            <mat-icon>chevron_right</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="item.badge">
+            <span class="badge-text">{{item.badge}} </span>
+          </ng-container>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div id="oba" *ngIf="displayList.length>9">
+    <p class="text-white text-center"><mat-icon>expand_less</mat-icon></p>       
+    <p class="text-white text-center" style="top: -20px;"><mat-icon>expand_more</mat-icon></p>       
+  </div>
+  <div id="menuFooter">
+    <p class="text-white text-end">{{footer}}</p>       
+  </div>
+</div>

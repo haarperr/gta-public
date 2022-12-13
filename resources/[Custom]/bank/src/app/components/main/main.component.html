@@ -1,0 +1,13 @@
+<div [@isVisibleChanged]="isVisible" id="Main" class="row">
+    <div class="col-12 text-end" style="height: 60px; margin-bottom: -60px; z-index: 99;">
+        <button class="btn btn-lg" (click)="close()"><fa-icon [icon]="faPowerOff"></fa-icon></button>
+    </div>
+    <div class="col-1" style="height: 100%; padding: 0;">
+        <app-menu></app-menu>
+    </div>
+    <div class="col-11" style="height: 100%; padding: 0;">
+        <div id="Content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

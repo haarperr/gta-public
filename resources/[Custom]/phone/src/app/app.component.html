@@ -1,0 +1,22 @@
+<ng-container *ngIf="showApp">
+<!-- <ng-container [@openClose]="showApp ? 'open' : 'closed'"> -->
+
+<div class="iphone-x">
+  <span id="speaker"></span>
+  <span id="camera"></span>
+  <div class="header flexbox">
+    <span>{{today | date:'HH:mm'}}</span>
+    <span>69%</span>
+  </div>
+  <app-notif></app-notif>
+  <div class="container">
+    <div [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
+
+  
+</div>
+
+</ng-container>
+

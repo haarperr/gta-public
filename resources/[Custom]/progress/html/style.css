@@ -1,0 +1,16 @@
+#progressbar {
+  position: absolute;
+  bottom: 70px;
+  width: 800px;
+  margin-left: 50%;
+  transform: translateX(-400px);
+  background-color: rgba(0, 0, 0, 0.452);
+  border: 2px solid #3b78c3;
+}
+
+#progress {
+  transition: all 1s linear;
+  width: 0%;
+  height: 30px;
+  background-color: #3b78c3;
+}

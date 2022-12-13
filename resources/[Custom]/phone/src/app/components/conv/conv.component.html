@@ -1,0 +1,29 @@
+<div class="app">
+    <div class="pt-5 card" *ngIf="messages">
+        <div class="card-header msg_head">
+            <div class="d-flex bd-highlight">
+                <div class="user_info">
+                    <span>{{ name }}</span>
+                    <p *ngIf="messages">{{messages.length}} Messages</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body msg_card_body">
+            <ng-container  *ngIf="messages">
+                <ng-container *ngFor="let message of messages; let i = index">
+                    <div [id]="i" class="d-flex mb-4" [ngClass]="{'justify-content-start' : phoneNumber == message.to, 'justify-content-end' : phoneNumber == message.from}">
+                        <div [ngClass]="{msg_cotainer : phoneNumber == message.to, msg_cotainer_send : phoneNumber == message.from, focus : message.focused}">
+                            {{message.content}}
+                            <span [ngClass]="{msg_time : phoneNumber == message.to, msg_time_send : phoneNumber == message.from}">{{message.createdAt | date:'dd/MM/YY HH:mm'}}</span>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+        <div class="card-footer">
+            <div class="input-group">
+                <div name="" class="form-control type_msg" [ngClass]="{type_msg_focus : focusedIndex==messages.length+1, type_msg_focus2 : focusedIndex==-9}">Écrire un message...</div>
+            </div>
+        </div>
+    </div>
+</div>

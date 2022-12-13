@@ -1,0 +1,63 @@
+<div id="Atm">
+    <h2>Dépôt - Retrait</h2>
+    <hr class="mb-4"/>
+    <div class="input-group input-group-lg mb-4">
+        <span class="input-group-text">$</span>
+        <input type="number" min="0" class="form-control" aria-label="Amount (to the nearest dollar)" [(ngModel)]="input">
+        <span class="input-group-text">.00</span>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <div class="card account-1">
+                <div class="card-body">
+                    <h5 class="card-title"><fa-icon [icon]="faUniversity"></fa-icon> Compte personnel</h5>
+                    <h1 class="card-text">{{ bank | currency}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 text-center" style="display: inline-grid;">
+            <button class="btn btn-light" (click)="depot(input, true)"><fa-icon [icon]="faArrowLeft" style="margin-right:10px;"></fa-icon> <fa-icon [icon]="faHandHoldingUsd"></fa-icon></button>
+            <button class="btn btn-light" (click)="retrait(input, true)"><fa-icon [icon]="faMoneyBillWave" style="margin-right:10px;"></fa-icon> <fa-icon [icon]="faArrowRight"></fa-icon></button>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><fa-icon [icon]="faWallet"></fa-icon> Liquide</h5>
+                    <h1 class="card-text">{{ cash | currency}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-4"/>
+    <h3 class="mb-1">Actions rapides</h3>
+    <div class="row action-rapide text-center">
+        <div class="col-2"></div>
+        <div class="col-3">
+            <h4>Dépôt</h4>
+            <hr>
+            <button class="btn btn-light" (click)="depot(100, false)"> $100 <fa-icon [icon]="faHandHoldingUsd"></fa-icon></button>
+            <button class="btn btn-light" (click)="depot(1000, false)"> $1,000 <fa-icon [icon]="faHandHoldingUsd"></fa-icon></button>
+            <button class="btn btn-light" (click)="depot(10000, false)"> $10,000 <fa-icon [icon]="faHandHoldingUsd"></fa-icon></button>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-3">
+            <h4>Retrait</h4>
+            <hr>
+            <button class="btn btn-light" (click)="retrait(100, false)"> $100 <fa-icon [icon]="faMoneyBillWave"></fa-icon></button>
+            <button class="btn btn-light" (click)="retrait(1000, false)"> $1,000 <fa-icon [icon]="faMoneyBillWave"></fa-icon></button>
+            <button class="btn btn-light" (click)="retrait(10000, false)"> $10,000 <fa-icon [icon]="faMoneyBillWave"></fa-icon></button>
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 m-3 notif" style="z-index: 999" *ngIf="notif" [ngClass]="{'notif-error': notif.type==='Erreur', 'notif-success': notif.type==='Succès'}">
+    <div id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">{{notif.type}}</strong>
+            <button type="button" class="btn-close" aria-label="Close" (click)="notif=null"></button>
+        </div>
+        <div class="toast-body">
+            {{notif.message}}
+        </div>
+    </div>
+</div>

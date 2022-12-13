@@ -1,0 +1,115 @@
+.row {
+  padding: 0;
+}
+
+#menu {
+  position: absolute;
+  width: 450px;
+  right: 2vw;
+  top: 6vh;
+}
+
+#menuHeader {
+  padding: 20px 20px 10px 20px;
+  background: linear-gradient(100deg, #0e396e, #2e7ad6);
+}
+#menuHeader h2 {
+  font-size: 60px;
+  text-shadow: black -5px 0;
+  font-family: 'Halaney';
+  line-height: 62px;
+  max-height: 140px;
+}
+#menuFooter {
+  font-size: 16px;
+  border-top: 3px solid black;
+  margin-top: 4px;
+  padding: 5px 20px 10px 20px;
+  background-color: rgba(0, 0, 0, 0.6)!important;
+}
+#menuFooter p {
+  margin: 0;
+  font-weight: 600;
+  font-family: Bahnschrift;
+}
+#oba {
+  font-size: 16px;
+  margin-top: 4px;
+  padding: 7px 0 0 0;
+  background-color: rgba(0, 0, 0, 0.9)!important;
+  height: 40px;
+}
+#oba p {
+  margin: 0;
+  position: relative;
+  top: -7px;
+}
+#subTitle {
+  background-color: black;
+  padding: 5px 10px;
+  font-family: Bahnschrift;
+  font-size: 18px;
+}
+
+#subTitle p {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2e7ad6;
+}
+
+h2 {
+  margin-top: .5rem;
+  margin-bottom: 0;
+}
+
+#menu-list {
+  border-radius: 0px;
+  max-height: 432px;
+  overflow: hidden;
+}
+
+.list-group-item {
+  color: white!important;
+  background-color: rgba(0, 0, 0, 0.6)!important;
+  font-size: 19px;
+  font-family: Bahnschrift;
+  padding: 3px 10px 2px 10px!important;
+}
+
+.fas, .far {
+  font-size: 20px;
+}
+
+.quantity {
+  font-size: 18px;
+}
+
+.focused {
+  color: black!important;
+  background-color: white!important;
+}
+
+.focused .badge {
+  color: black;
+}
+
+.p2x {
+  padding-top: 2px;
+}
+
+.slider-text {
+  position: relative;
+  top: -6px;
+  font-size: 17px;
+  font-weight: normal;
+  margin-right: -5px;
+}
+
+.badge-text {
+  position: relative;
+  top: 4px;
+  font-size: 19px;
+  font-weight: normal;
+  margin-right: -5px;
+}

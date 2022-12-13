@@ -1,0 +1,49 @@
+<div id="Home"> 
+    <h2>Home</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-12 mb-5">
+            Une tortue avec des vrais couteaux.
+        </div>
+        <div class="col-3 text-center mb-4">
+            <h4>Champ de cannabis</h4>
+            <img src="assets/cannabis.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button (click)="triggerFunction('champCannabisGPS')"><mat-icon>gps_fixed</mat-icon> Localisation</button>
+        </div>
+        <div class="col-3 text-center mb-4">
+            <h4>Entrepot de véhicule</h4>
+            <img src="assets/garage.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button (click)="triggerFunction('entrepotGPS')"><mat-icon>gps_fixed</mat-icon> Localisation</button>
+        </div>
+        <!-- <div class="col-3 text-center mb-4">
+            <h4>Transformer le cannabis</h4>
+            <img src="assets/cannabis.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button (click)="triggerServerEvent('requestTransfo', 20, 5)"><mat-icon>handyman</mat-icon> Démarrer</button>
+        </div> -->
+        <div class="col-3 text-center mb-4">
+            <h4>Livraison go-fast</h4>
+            <img src="assets/fast-delivery.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button (click)="triggerServerEvent('startGoFast')"><mat-icon>directions_car</mat-icon> Démarrer</button>
+        </div>
+        <div class="col-3 text-center mb-4">
+            <h4>Vol de véhicule</h4>
+            <img src="assets/sport-car.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button routerLink="/voiture">Accéder <mat-icon>arrow_forward</mat-icon></button>
+        </div>
+        <!-- <div class="col-3 text-center mb-4">
+            <h4>Commande d'arme</h4>
+            <img src="assets/ak.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button routerLink="/catalogue"><mat-icon>shopping_cart</mat-icon> Commander</button>
+        </div>
+        <div class="col-3 text-center mb-4">
+            <h4>Historique des commandes</h4>
+            <img src="assets/clock.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button routerLink="/commandes"><mat-icon>watch_later</mat-icon> Consulter</button>
+        </div> -->
+        <div class="col-3 text-center mb-4">
+            <h4>Recel</h4>
+            <img src="assets/trade.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button routerLink="/recel"><mat-icon>attach_money</mat-icon> Accéder</button>
+        </div>
+    </div>
+</div>

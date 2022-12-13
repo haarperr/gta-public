@@ -1,0 +1,38 @@
+.list-group-item {
+    color: white;
+    border-radius: 20px;
+}
+
+.list-group {
+    max-height: 635px;
+    overflow: hidden;
+}
+.row {
+    margin-left: 0;
+}
+
+.menu-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 250px;
+    width: 100%;
+    background: #1a1a1a;
+    animation-name: slidemenubottom;
+    animation-duration: 0.1s;
+}
+
+@keyframes slidemenubottom {
+    from {transform: translateY(150px);}
+    to {transform: translateY(0px);}
+}
+
+.menu-bottom .list-group-item {
+    box-shadow: none;
+    border: none;
+}
+
+.fake-input {
+    border: 1px solid grey;
+    border-radius: 8px;
+    min-height: 55px;
+}

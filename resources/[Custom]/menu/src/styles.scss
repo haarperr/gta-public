@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  /* background: url('test.png');
+  background-size: cover; */
+}
+
+body {
+  background-color: transparent!important;
+  overflow: hidden;
+  -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+  
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

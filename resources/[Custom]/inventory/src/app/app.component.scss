@@ -1,0 +1,112 @@
+#app {
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+.row {
+  height: 100%;
+}
+
+.list-group {
+  height: calc(75vh);
+  background: #3e3e3e;
+  border-radius: 0 0 5px 5px;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: scroll;
+  scrollbar-width: none;  /* Firefox */
+}
+.list-group::-webkit-scrollbar {
+  display: none;
+}
+  
+.title {
+  background: linear-gradient(100deg, #0e396ee3, #2e7ad6e5);
+  border-radius: 5px 5px 0 0;
+  font-size: 23px;
+}
+.title input {
+  max-width: 115px;
+}
+
+.list-group-item {
+  font-size: 19px;
+  border-radius: 0;
+  background: rgba(10, 10, 10, 0.8);
+  color: white;
+}
+
+.list-group-item:hover {
+  background: rgba(141, 141, 141, 0.8);
+}
+
+.badge {
+  font-size: 18px;
+}
+
+.icon {
+  padding: 1px 5px 1px 0;
+}
+.icon img {
+  max-width: 30px;
+}
+.item {
+  padding: .35em .65em;
+}
+
+.cdk-drag-placeholder, .cdk-drag-placeholder:hover {
+  background: rgba(160, 160, 160, 0.9);
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  height: 100%;
+}
+
+#contextMenu {
+  position: absolute; 
+  display: none;
+  z-index: 9999;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+  padding: 10px 0;
+}
+.menu > li {
+  font: inherit;
+  border: 0;
+  padding: 10px 30px 10px 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: unset;
+  color: #000;
+  font-weight: 500;
+}
+.menu > li:hover {
+  background:#f1f3f7;
+  color: #4b00ff;
+}
+.menu > li.del:hover {
+  color: red;
+}
+
+.inv, .wallet {
+  position: relative;
+  top: calc(5%);
+}
+
+.give-list {
+  height: 400px;
+}
+
+.wallet-list {
+  height: auto;
+}

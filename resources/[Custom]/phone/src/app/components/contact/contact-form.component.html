@@ -1,0 +1,23 @@
+<div class="app">
+    <div class="mt-5 pt-4">
+        <h1 class="px-4">{{action}}</h1>
+        <div class="p-1 mh-auto">
+            <h2 class="px-4 mt-4">Nom</h2>
+            <p class="p-3 m-2 mx-4 fake-input" [ngClass]="{focused: focused===0}">{{contact.name}}</p>
+        </div>
+        <div class="p-1 mh-auto">
+            <h2 class="px-4 mt-4">Téléphone</h2>
+            <p class="p-3 m-2 mx-4 fake-input" [ngClass]="{focused: focused===1}">555-{{contact.phone}}</p>
+        </div>
+        <div class="d-block m-2 px-4 mt-5">
+            <p class="text-danger" *ngIf="error">{{error}}</p>
+            <div class="btn btn-outline-success d-block" [ngClass]="{focused: focused===2}">Enregister</div>
+            <div class="btn btn-outline-danger d-block mt-3" [ngClass]="{focused: focused===3}" *ngIf="this.action === 'Modifier contact'">Supprimer</div>
+        </div>
+        <div class="d-block m-2 px-4 mt-5" *ngIf="success">
+            <div class="alert alert-success" role="alert">
+                {{success}}
+            </div>
+         </div>
+    </div>
+</div>

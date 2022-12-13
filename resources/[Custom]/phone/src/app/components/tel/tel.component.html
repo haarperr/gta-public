@@ -1,0 +1,48 @@
+<div class="app">
+    <div class="row mt-5 pt-3">
+        <h1 class="px-4">Téléphone</h1>         
+        <div class="row p-1">
+            <ul class="list-group">
+                <li class="list-group-item mb-2 fakebtn" [ngClass]="{focused: focusedIndex==-1}">
+                    <h4 class="m-0">Nouvel appel</h4>
+                </li>
+                <ng-container *ngIf="loading;else display" class="text-center">
+                    <mat-spinner class="mx-auto mt-5"></mat-spinner>
+                </ng-container>
+                <ng-template #display>
+                    <li class="list-group-item d-flex" *ngFor="let appel of appels; let i = index" [ngClass]="{focused: appel.focused===true}" [id]="i">
+                        <ng-container *ngIf="appel.to.phone === phoneNumber">
+                            <div class="call-icon">
+                                <mat-icon style="color: #9b46c1;">phone_callback</mat-icon>
+                            </div>
+                            <div class="d-block">
+                                <h2 class="m-0">{{appel.from.contact}}</h2>
+                                <div class="d-flex" style="justify-content: space-between;width: 265px;">
+                                    <p class="text-start">555-{{appel.from.phone}}</p>
+                                    <p class="text-end text-muted" style="margin-top: -11px;">{{appel.createdAt | date:'dd/MM HH:mm'}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="appel.from.phone === phoneNumber">
+                            <div class="call-icon">
+                                <mat-icon style="color: #3487a0;">phone_forwarded</mat-icon>
+                            </div>
+                            <div class="d-block">
+                                <h2 class="m-0">{{appel.to.contact}}</h2>
+                                <div class="d-flex" style="justify-content: space-between;width: 265px;">
+                                    <p class="text-start">555-{{appel.to.phone}}</p>
+                                    <p class="text-end text-muted" style="margin-top: -11px;">{{appel.createdAt | date:'dd/MM HH:mm'}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+        <div class="menu-bottom p-2 m-0" *ngIf="menuAction">
+            <ul class="list-group mt-2">
+                <li class="list-group-item p-3" *ngFor="let item of actions" [ngClass]="{focused: item.focused===true}">{{item.text}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

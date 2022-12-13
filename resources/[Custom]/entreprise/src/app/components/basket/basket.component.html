@@ -1,0 +1,44 @@
+<div id="Home"> 
+    <h2>Panier</h2>
+    <hr/>
+    <div class="row">
+        <ng-container *ngIf="basket.length>0;else noBasket">
+            <table class="table table-dark">
+                <!-- <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr class="p-4" *ngFor="let item of basket">
+                        <td class="d-flex">
+                            <img [src]="'assets/'+item.icon" alt="" class="mx-3 basketImg">
+                            <p>{{item.name}}</p>
+                        </td>
+                        <td class="text-end" style="width: 150px;">
+                            <p>{{item.buyPrice | currency}}</p>
+                        </td>
+                        <td style="width: 10px;"><p>x</p></td>
+                        <td style="width: 90px;">
+                            <input [id]="'input'+item.id" type="number" min="1" class="inputQuantity" [value]="item.quantity" (change)="edit($event, item)">
+                        </td>
+                        <td class="text-center" style="width: 150px;">
+                            <button mat-flat-button (click)="delete(item)"><mat-icon>delete</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="validOrder d-flex">
+                <h3 class="p-2 me-4">{{totalBasket | currency}}</h3>
+                <button class="p-2" mat-flat-button routerLink="/commandes/create">Passer la commande <mat-icon>keyboard_double_arrow_right</mat-icon></button>
+            </div>
+        </ng-container>
+        <ng-template #noBasket>
+            Votre panier est vide.
+        </ng-template>
+    </div>
+</div>

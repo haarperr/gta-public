@@ -1,0 +1,20 @@
+<div id="Home"> 
+    <h2>Recel d'objets</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-12 mb-5">
+            Liste des items pouvant être revendus.
+        </div>
+        <div class="col-12 mb-5" *ngIf="items.length===0">
+            <i>Aucun.</i>
+        </div>
+        <div class="col-3 text-center mb-4" *ngFor="let item of items">
+            <h4>{{item.Item.name}}</h4>
+            <img [src]="'assets/'+item.Item.icon" alt="" class="p-1 catalogueImg">
+            <p>{{item.Item.priceRecel | currency}}</p>
+            <p><i>Quantité : {{item.quantity}}</i></p>
+            <input [id]="'input'+item.id" type="number" min="1" [max]="item.quantity" class="inputQuantity" [value]="item.quantity">
+            <button mat-flat-button (click)="sell(item)"><mat-icon>attach_money</mat-icon></button>
+        </div>
+    </div>
+</div>

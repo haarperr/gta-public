@@ -1,0 +1,50 @@
+.inputQuantity {
+  width: 70px;
+  height: 36px;
+  background-color: #2b2a2c;
+  color: white;
+  border: 1px solid green;
+  border-radius: 4px;
+  text-align: center;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+td {
+  padding: 20px 0 10px 30px;
+}
+
+td p {
+  padding-top: 6px;
+}
+
+.validOrder {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+}
+.validOrder h3 {
+  margin-left: auto;
+}
+.validOrder button {
+  background-color: #59c230;
+  width: 200px;
+}
+
+.row {
+  max-height: 495px;
+  overflow-y: auto;
+}
+
+.basketImg {
+  width: 40px;
+  height: 40px;
+}

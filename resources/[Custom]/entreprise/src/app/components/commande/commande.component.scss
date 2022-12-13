@@ -1,0 +1,87 @@
+
+.validBtn {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+  background-color: #59c230;
+  width: 310px;
+}
+
+.inputDetails {
+  position: absolute;
+  bottom: 0px;
+  left: 120px;
+  margin: 35px 0 0 10px;
+  width: 400px;
+}
+
+.total {
+  position: absolute;
+  bottom: 35px;
+  right:350px;
+}
+
+.payementBtn {
+  margin: 100px 0 0 255px;
+  background-color: #59c230;
+  width: 500px;
+}
+
+
+::ng-deep .mat-horizontal-stepper-header{
+  pointer-events: none !important;
+}
+
+mat-stepper{
+  background: #2b2a2c;
+  height: 580px;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected, ::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background: #59c230;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #59c230;
+}
+
+h1 .mat-icon {
+  font-size: 120px;
+  color: #59c230;
+}
+
+.list-group {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  background: #2b2a2c;
+  color: white;
+  border: 1px solid #59c2305e;
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #59c230 !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  background-color: #59c230 !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ background-color: #59c230 !important;;
+}
+
+::ng-deep.mat-form-field-appearence.mat-focused .mat-form-field-outline-thick {
+  color: #59c230 !important;
+}
+
+button {
+  background: #59c230;
+}
+
+.cmdImg {
+  width: 20px;
+}

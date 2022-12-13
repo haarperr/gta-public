@@ -1,0 +1,23 @@
+<div id="Menu" class="text-center">
+    <div id="Logo">
+        <a routerLink="/home">
+            <img [src]="'assets/'+logo+'.png'" alt="">
+            <b>TurtleOS</b>
+        </a>
+    </div>
+    <a routerLink="/home" routerLinkActive="active" class="menu-item">
+        <mat-icon>home</mat-icon>
+    </a>
+    <!-- <a routerLink="/catalogue" routerLinkActive="active" class="menu-item">
+        <mat-icon>shopping_basket</mat-icon>
+    </a>
+    <a routerLink="/commandes" routerLinkActive="active" class="menu-item">
+        <mat-icon>watch_later</mat-icon>
+    </a> -->
+    <a routerLink="/recel" routerLinkActive="active" class="menu-item">
+        <mat-icon>autorenew</mat-icon>
+    </a>
+    <a routerLink="/voiture" routerLinkActive="active" class="menu-item">
+        <mat-icon>directions_car</mat-icon>
+    </a>
+</div>

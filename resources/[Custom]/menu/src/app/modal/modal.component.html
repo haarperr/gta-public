@@ -1,0 +1,10 @@
+<div id="modal" [formGroup]="form">
+    <mat-form-field appearance="outline" class="d-block">
+        <input matInput formControlName="input" type="number" placeholder="Écrire ici..." autocomplete="off" [max]="max" (keyup.enter)="do()" cdkFocusInitial>
+        <button class="btn btn-outline-primary" (click)="maxQ()" style="margin: -16px -4px 0 8px;" matSuffix *ngIf="max!=99999999999">MAX</button>
+    </mat-form-field>
+    <div class="d-flex" style="justify-content: center;">
+        <button class="btn btn-outline-warning me-4" (click)="close()">CANCEL</button>
+        <button class="btn btn-outline-success" (click)="do()">OK</button>
+    </div>
+</div>

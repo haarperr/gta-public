@@ -1,0 +1,34 @@
+<div class="app">
+    <div class="row mt-5 pt-3">
+        <h1 class="px-4">Messagerie d'entreprise</h1>         
+        <div class="row p-1">
+            <ul class="list-group">
+                <ng-container *ngIf="loading;else display" class="text-center">
+                    <mat-spinner class="mx-auto mt-5"></mat-spinner>
+                </ng-container>
+                <ng-template #display>
+                    <li class="list-group-item d-flex" *ngFor="let message of messages; let i = index" [ngClass]="{focused: message.focused===true}" [id]="i">
+                        <div class="d-block">
+                            <div class="d-flex" style="justify-content:space-between;width:320px;">
+                                <p class="m-0 fw-bold">{{message.content}}</p>
+                                <p class="text-end text-muted ps-3">{{message.createdAt | date:'dd/MM HH:mm'}}</p>
+                            </div>
+                            <div class="d-flex" style="justify-content:space-between;width:320px;">
+                                <p class="text-start text-muted" *ngIf="message.from!=9999">555-{{message.from}}</p>
+                                <p class="text-start text-muted" *ngIf="message.from===9999">555-XXXX</p>
+                                <mat-icon style="color:gray;" *ngIf="message.unseen===1">done</mat-icon>
+                                <mat-icon style="color: #3487a0;" *ngIf="message.unseen===0">done_all</mat-icon>
+                            </div>
+                        </div>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+        
+        <div class="menu-bottom p-2 m-0" *ngIf="menuAction">
+            <ul class="list-group mt-2">
+                <li class="list-group-item p-3 focused">Prendre l'appel</li>
+            </ul>
+        </div>
+    </div>
+</div>

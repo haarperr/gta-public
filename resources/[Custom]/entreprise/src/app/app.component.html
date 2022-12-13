@@ -1,0 +1,16 @@
+<div *ngIf="isVisible" id="Main" class="row">
+    <div class="col-12 text-end" style="height: 60px; margin-bottom: -60px; z-index: 99;">
+        <!-- <button class="btn btn-lg" routerLink="/panier" routerLinkActive="active" *ngIf="basket">
+            <mat-icon [matBadge]="basket" matBadgeColor="warn">shopping_cart</mat-icon>
+        </button> -->
+        <button class="btn btn-lg" (click)="close()"><mat-icon>power_settings_new</mat-icon></button>
+    </div>
+    <div class="col-1" style="height: 100%; padding: 0;">
+        <app-menu></app-menu>
+    </div>
+    <div class="col-11" style="height: 100%; padding: 0;">
+        <div id="Content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

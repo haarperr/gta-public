@@ -1,0 +1,41 @@
+<div id="Home"> 
+    <h2>Mes commandes</h2>
+    <hr/>
+    <div class="row">
+        <mat-accordion class="example-headers-align" *ngIf="commandes">
+            <mat-expansion-panel *ngFor="let commande of commandes">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        #{{commande.id}} - {{commande.createdAt | date:'dd/MM/YYYY'}}
+                    </mat-panel-title>
+                    <mat-panel-description>                        
+                        <span *ngIf="commande.statut === 'created'"><mat-icon style="font-size: 20px;position: relative;top: 6px;">schedule</mat-icon> En attente de validation</span>
+                        <span *ngIf="commande.statut === 'payment'"><mat-icon style="font-size: 20px;position: relative;top: 6px;">schedule</mat-icon> En attente de paiement</span>
+                        <span *ngIf="commande.statut === 'shipping'"><mat-icon style="font-size: 20px;position: relative;top: 6px;">schedule</mat-icon> Livraison en attente</span>
+                        <span *ngIf="commande.statut === 'shipped'"><mat-icon style="font-size: 20px;position: relative;top: 6px;">local_shipping</mat-icon> Livraison en cours</span>
+                        <span *ngIf="commande.statut === 'done'"><mat-icon style="font-size: 20px;position: relative;top: 6px;">done</mat-icon> Terminée</span>
+                        <span>{{commande.total | currency}}</span>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <button mat-flat-button [routerLink]="'/commandes/'+commande.id" class="mb-3">Consulter <mat-icon>keyboard_double_arrow_right</mat-icon></button>
+
+                <p *ngIf="commande.details">Observations : {{commande.details}}</p>
+                <p *ngIf="!commande.details">Observations : <i>Aucune</i></p>
+                <table class="table table-dark">
+                    <thead>
+                        <th>Article</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of commande.CommandeContents">
+                            <td>{{item.Item.name}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.price | currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

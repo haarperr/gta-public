@@ -1,0 +1,201 @@
+#Main {
+    width: 1200px;
+    height: 700px;
+    border: 1px solid #30a0d4;
+    border-radius: 10px;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Content {
+    height: 100%;
+    background: #2b2a2c;
+    color: white;
+    padding: 30px 10px 0 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mat-drawer-container {
+    background: #2b2a2c;
+    border-radius: 10px;
+}
+
+#closeBtn {
+    color: #30a0d4;
+    margin: 20px;
+}
+
+#closeBtn .mat-icon {
+    font-size: 35px;
+    position: relative;
+    top: 3px;
+    right: 4px;
+}
+
+.crafts {
+    height: 580px;
+    overflow-y: auto;
+}
+
+.craftItem {
+    cursor: pointer;
+    padding: 10px 20px;
+    height: 220px;
+}
+
+.craftItem:hover {
+    cursor: pointer;
+    background: #585758;
+    border-radius: 20px;
+}
+
+.craftBtn {
+    background: #30a0d4;
+    margin-right: 20px;
+    border-radius: 0 4px 4px 0;
+    // margin-left: 50%;
+    // transform: translateX(-50%);
+    // margin-right: -50px;
+}
+
+.timer .mat-icon {
+    position: relative;
+    top: 7px;
+}
+
+.craftRecette {
+    height: 80px;
+}
+
+.active, .active:hover {
+    color: white;
+    background: #30a0d4;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.craftImg {
+  width: 70px;
+  height: 70px;
+}
+
+.recetteImg {
+    width: 30px;
+    height: 30px;
+}
+
+.sidenav-content {
+    width: 450px;
+    padding: 60px;
+}
+
+.no-item {
+    color: #e35e5e;
+    font-style: italic;
+}
+
+.crafting {
+    background: #30a0d4;
+    color: white;
+    transition: opacity 1s;
+    z-index: 10;
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.crafting p {
+    margin-top: -3px;
+}
+
+.crafting p .mat-icon {
+    position: relative;
+    top: 5px;
+}
+
+.crafting button {
+    background: #30a0d4;
+    color: white;
+    box-shadow: none;
+    border: 1px solid white;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 10px;
+    top: 8px;
+}
+
+.crafting button .mat-icon {
+    margin-top: -9px;
+}
+
+.crafting {
+    background: linear-gradient(130deg, #48b8ec, #1b76a0,#48b8ec);
+    background-size: 200% 200%;
+    -webkit-animation: Animation 5s ease infinite;
+    -moz-animation: Animation 5s ease infinite;
+    animation: Animation 5s ease infinite;
+}
+
+@-webkit-keyframes Animation {
+    0%{background-position:100% 100%}
+    50%{background-position:0% 0%}
+    100%{background-position:100% 100%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:100% 100%}
+    50%{background-position:0% 0%}
+    100%{background-position:100% 100%}
+}
+@keyframes Animation { 
+    0%{background-position:100% 100%}
+    50%{background-position:0% 0%}
+    100%{background-position:100% 100%}
+}
+
+
+.inputQuantity {
+    width: 70px;
+    height: 36px;
+    background-color: #373737;
+    color: white;
+    border: 1px solid #30a0d4;
+    border-radius: 4px 0 0 4px;
+    text-align: center;
+    position: relative;
+    top: 2px;
+    margin-left: 45px;
+}
+
+.inputQuantityDisabled {
+    border: 1px solid #595959;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

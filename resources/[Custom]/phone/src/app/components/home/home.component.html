@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12 p-5 mt-5 mb-5">
+        <div id="time">
+            <p>{{today | date:'HH:mm'}}<span style="font-size: 0.6em;">:{{today | date:'ss '}}</span> </p>
+        </div>
+    </div>
+
+    <div class="col-12" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-4 text-center" *ngFor="let appli of applis">
+                <div class="appliIcon pt-3 pl-2 pr-2 pb-1" [ngClass]="{focused: appli.focused===true}">
+                    <mat-icon matListIcon>{{appli.icon}}</mat-icon>
+                    <span class="position-absolute badge rounded-pill bg-danger nbNotif" *ngIf="appli.notif">
+                        {{appli.notif}}
+                    </span>
+                    <p>{{appli.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

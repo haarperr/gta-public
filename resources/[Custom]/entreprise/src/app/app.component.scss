@@ -1,0 +1,42 @@
+#Main {
+    width: 1200px;
+    height: 700px;
+    border: 1px solid #59c230;
+    border-radius: 10px;
+}
+
+#Content {
+    height: 100%;
+    background: #2b2a2c;
+    color: white;
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+}
+
+.btn {
+    color: #59c230;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.active, .active:hover {
+    color: white;
+    background: #59c230;
+}
+
+.error-snackbar {
+    background: #911e1e;
+    margin-bottom: 50px!important;
+}
+
+.error-snackbar button {
+    color: white;
+}
+
+.success-snackbar {
+    margin-bottom: 50px!important;
+    background: #0e7714;
+}
+.success-snackbar button {
+    color: white;
+}

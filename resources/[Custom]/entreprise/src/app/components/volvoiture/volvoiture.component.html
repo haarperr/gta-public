@@ -1,0 +1,36 @@
+<div id="Home"> 
+    <h2>Vol de véhicule</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-12"><h4>Actions</h4></div>
+        <hr>
+        <div class="col-3 text-center mb-4">
+            <h4>Véhicule de luxe</h4>
+            <img src="assets/sport-car.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button (click)="triggerServerEvent('createVolVehicule')"><mat-icon>directions_car</mat-icon> Démarrer</button>
+        </div>
+        <div class="col-3 text-center mb-4" *ngIf="!collection">
+            <h4>Nouvelle collection</h4>
+            <img src="assets/cars.png" alt="" class="my-4 catalogueImg d-flex m-auto">
+            <button mat-flat-button (click)="startCollection()"><mat-icon>play_arrow</mat-icon> Démarrer</button>
+        </div>
+        <div class="col-12"><h4>Collection</h4></div>
+        <hr>
+        <i *ngIf="!collection">Aucune collection.</i>
+        <ng-container *ngIf="collection">
+            
+            <div class="col-3 text-center mb-4" *ngFor="let item of collection.CollectionCarContents">
+                <h4 class="mb-3">{{item.modelName}}</h4>
+                <p class="text-start fst-italic">Caractéristiques : </p>
+                <ul class="text-start">
+                    <li>Moteur : {{item.engine}}</li>
+                    <li>Freins : {{item.brake}}</li>
+                    <li>Suspension : {{item.suspension}}</li>
+                    <li>Couleur principale : {{item.color1}}</li>
+                    <li>Couleur secondaire : {{item.color2}}</li>
+                </ul>
+                <!-- <button mat-flat-button (click)="startCollection()"><mat-icon>play_arrow</mat-icon> Démarrer</button> -->
+            </div>
+        </ng-container>
+    </div>
+</div>

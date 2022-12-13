@@ -1,0 +1,81 @@
+<div id="Home"> 
+    <h2>Ma commande</h2>
+    <hr/>
+    <div class="row">
+        <mat-stepper linear #stepper>
+            <mat-step>
+                <ng-template matStepLabel>Confirmation</ng-template>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between" *ngFor="let item of basket">
+                        <span><img [src]="'assets/'+item.icon" alt="" class="mx-3 cmdImg"> {{item.name}}</span>
+                        <span>{{item.quantity}} x {{item.buyPrice | currency}} <i> = {{(item.quantity * item.buyPrice) | currency}}</i></span>
+                    </li>
+                </ul>
+                <mat-form-field class="inputDetails" appearance="outline">
+                    <mat-label>Mettre une note dans votre commande</mat-label>
+                    <input matInput [(ngModel)]="details" placeholder="Ne sera visible que par vous-même." cdkFocusInitial/>
+                </mat-form-field>
+                <h4 class="total"><b>Total : {{totalBasket | currency}}</b></h4>
+                <button class="p-3 validBtn" mat-flat-button (click)="confirm()">
+                    <h5 class="d-inline">Confirmer la commande</h5> <mat-icon>keyboard_double_arrow_right</mat-icon>
+                </button>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Paiement</ng-template>
+                <div class="row pt-5" *ngIf="commande">
+                    <div class="col-12 text-center mb-5"><h3>Total à régler : {{commande.total | currency}}</h3></div>
+                    <div class="col-2"></div>
+                    <div class="col-3">
+                        <button class="p-3 px-4" mat-flat-button (click)="payer('cb')" mat-button *ngIf="!payementLoading && !payementConfirm && !payementError"><h4><mat-icon>credit_card</mat-icon> Carte banquaire</h4></button>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-3">
+                        <button class="p-3 px-4" mat-flat-button (click)="payer('cash')" mat-button *ngIf="!payementLoading && !payementConfirm && !payementError"><h4><mat-icon>payments</mat-icon> Liquide</h4></button>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <mat-spinner style="margin:50px auto;" *ngIf="payementLoading"></mat-spinner>
+                <div class="text-center" *ngIf="payementConfirm">
+                    <h1 style="margin: 30px 0 0 -105px;"><mat-icon>check</mat-icon></h1>
+                    <p>Paiement accepté.</p>
+                    <button class="p-2 px-3 mt-3" mat-flat-button (click)="stepper.next()" mat-button *ngIf="payementConfirm">Continuer <mat-icon>keyboard_double_arrow_right</mat-icon></button>
+                </div>
+                <div class="text-center" *ngIf="payementError">
+                    <h1 style="margin: 30px 0 0 -105px;"><mat-icon>cancel</mat-icon></h1>
+                    <p>Paiement refusé.</p>
+                    <button class="p-2 px-3 mt-3" mat-flat-button (click)="payementError=false" mat-button *ngIf="payementError"><mat-icon>refresh</mat-icon> Réessayer</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Livraison</ng-template>
+                <ng-container *ngIf="commande">
+                    <ng-container *ngIf="commande.statut==='shipping'">
+                        <div class="row">
+                            <div class="col-12" *ngIf="activeShipping">
+                                <h5 class="text-center mt-5 pt-5"><mat-icon style="position: relative;top: 6px;">close</mat-icon> Impossible de livrer maintenant. Une commande est déjà en cours de livraison ou les livreurs sont tous occupés.</h5>
+                                <button class="p-2 px-3 mt-5 d-flex m-auto" mat-flat-button mat-button routerLink="/commandes"><mat-icon>arrow_back</mat-icon> Retour aux commandes</button>
+                            </div>
+                            <div class="col-12" *ngIf="!activeShipping">
+                                <h5 class="text-center mt-5 pt-5"><mat-icon style="position: relative;top: 6px;">done</mat-icon> Vous pouvez lancer la livraison de la commande.</h5>
+                                <button class="p-2 px-3 mt-5 d-flex m-auto" mat-flat-button mat-button (click)="startLivraison()">Lancer la livraison <mat-icon>local_shipping</mat-icon></button>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="commande.statut==='shipped'">
+                        <p>La livraison est en cours...</p>
+                        <button class="p-2 px-3 mt-3" mat-flat-button (click)="getLivraisonCoords()" mat-button><mat-icon>gps_fixed</mat-icon> Obtenir la localisation</button>
+                        <img src="assets/chronopost-delivery.gif" alt="" style="position: absolute; bottom: 0; left: 32%">
+                    </ng-container>
+                </ng-container>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Terminé</ng-template>
+                <p>You are now done.</p>
+            </mat-step>
+            
+            <ng-template matStepperIcon="edit">
+                <mat-icon>check</mat-icon>
+            </ng-template>
+        </mat-stepper>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+html {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    background: transparent!important;
+}
+body {
+    background: transparent!important;
+}
+.mat-input-element {
+    caret-color: #59c230;
+}
+
+
+.error-snackbar {
+    background: #911e1e;
+    color: white;
+    margin-bottom: 50px!important;
+}
+
+.error-snackbar button {
+    color: white;
+}
+
+.success-snackbar {
+    margin-bottom: 50px!important;
+    color: white;
+    background: #0e7714;
+}
+.success-snackbar button {
+    color: white;
+}

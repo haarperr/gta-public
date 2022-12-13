@@ -1,0 +1,30 @@
+<div class="app">
+    <div class="row mt-5 pt-3">
+        <h1 class="px-4">Messages</h1>
+        <div class="row p-1">
+            <ul class="list-group" #listmessages>
+                <li class="list-group-item mb-2 fakebtn" [ngClass]="{focused: focusedIndex==-1}">
+                    <h4 class="m-0">Nouveau message</h4>
+                </li>
+                <ng-container *ngIf="loading" class="text-center">
+                    <mat-spinner class="mx-auto mt-5"></mat-spinner>
+                </ng-container>
+                <ng-container  *ngIf="messages" style="height: 630px;">
+                    <div class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let message of messages; let i = index" [ngClass]="{focused: message.focused===true}" [id]="i">
+                        <div class="ms-2 me-auto">
+                            <h2 class="m-0" style="overflow: hidden; max-width: 308px;" *ngIf="message.from.phone == phoneNumber && message.to.phone != phoneNumber">{{ (message.to.contact.length>28)? (message.to.contact | slice:0:28)+'..':(message.to.contact) }}</h2>
+                            <h2 class="m-0" style="overflow: hidden; max-width: 308px;" *ngIf="message.from.phone != phoneNumber || message.from.phone == phoneNumber && message.to.phone == phoneNumber">{{ (message.from.contact.length>28)? (message.from.contact | slice:0:28)+'..':(message.from.contact) }}</h2>
+                            <p style="overflow: hidden; max-width: 308px;">{{ (message.content.length>50)? (message.content | slice:0:50)+'..':(message.content) }}</p>
+                        </div>
+                        <span class="badge rounded-pill" *ngIf="message.unseen>0">{{message.unseen}}</span>
+                    </div>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="menu-bottom p-2 m-0" *ngIf="menuAction">
+            <ul class="list-group mt-2">
+                <li class="list-group-item p-3" *ngFor="let item of actions" [ngClass]="{focused: item.focused===true}">{{item.text}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

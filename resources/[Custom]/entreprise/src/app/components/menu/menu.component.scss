@@ -1,0 +1,38 @@
+#Menu {
+    height: 100%;
+    background: #2b2a2c;
+    border-right: 1px solid #59c23079;
+    border-radius: 10px 0 0 10px;
+}
+
+#Logo {
+    margin-bottom: 20px;
+}
+#Logo a {
+    color: #59c230;
+    text-decoration: none;
+}
+#Logo img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 10px 0 5px 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #59c230;
+}
+
+.menu-item:hover {
+    color: white;
+    background: #59c230ab;
+}
+
+.active, .active:hover {
+    color: white;
+    background: #59c230;
+}
