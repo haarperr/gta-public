@@ -8,6 +8,9 @@ Dossier "reworkhud"
 
 ![screenshot](https://i.imgur.com/MsMZNls.png)
 
+## TODO
+Refaire le menu et la banque en webcomponent
+
 ## Inventaire 
 
 Inventaire de joueurs, des véhicules et autres coffres en drag and drop.
