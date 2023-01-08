@@ -2,6 +2,12 @@
 
 Ce repo est à but de présentation de mon travail réalisé sur FiveM (GTA5) avec son code source. 
 
+# UPDATE 
+## Apprentissage en webcomponents, rework et optimisation du hud en une seule ressource.
+Dossier "reworkhud"
+
+![screenshot](https://i.imgur.com/MsMZNls.png)
+
 ## Inventaire 
 
 Inventaire de joueurs, des véhicules et autres coffres en drag and drop.
@@ -35,6 +41,9 @@ https://user-images.githubusercontent.com/26230373/207402444-925bfb25-1ce9-46c4-
 
 
 ## HUD 
+
+
+## Ancienne version, nouvelle version dans l'update plus haut
 
 HUD du véhicule et du joueur en HTML/JS brut
 
