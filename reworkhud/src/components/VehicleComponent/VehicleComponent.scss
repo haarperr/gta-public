@@ -1,0 +1,225 @@
+:host {
+    padding: 10px;
+	text-shadow: 2px 2px 5px #424242;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    bottom: 20px;
+    right: 150px;
+    font-size: 45px;
+	text-align: center;
+    color: #fff;
+    transform: rotate(3deg) skew(-5deg);
+    // filter: drop-shadow(0px 0px 50px black);
+    --drop: #333333;
+    --droplight: #33333373;
+    --bg: #3b78c3;
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #container {  
+        bottom: 2%;
+        right: 4%;
+    }
+}
+
+@media (min-aspect-ratio: 18/9) {
+    #container {  
+        bottom: 5%;
+        right: 20%;
+    }
+}
+
+.small {
+	font-size: 25px;
+}
+
+#fuel {
+    position: absolute;
+    right: -10px;
+    top: 20px;
+    z-index: 11;
+}
+
+#fuel-bar {
+    position: absolute;
+    transform: rotate(-90deg);
+    background: rgba(255,255,255,0.1);
+    border-radius: 100px;
+    height: 6px;
+    width: 50px;
+    right: 0px;
+    filter: drop-shadow(0px 4px 2px var(--droplight));
+}
+
+#fuel-value {
+    /* animation: load 2s normal forwards; */
+    border-radius: 100px;
+    background: var(--bg);
+    height: 4px;
+    width: 50%;
+    margin: 1px;
+}
+
+#fuel-txt {
+    position: absolute;
+    bottom: -5px;
+    right: -20px;
+    font-family: Digit;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px var(--droplight), 4px 4px 6px var(--drop);
+}
+#fuel-p {
+    font-family: Digit;
+}
+
+.fa-gas-pump {
+    position: absolute;
+    font-size: 0.4em;
+    text-shadow: -2px -2px 1px var(--drop), -4px -4px 2px var(--drop), 6px 6px 3px var(--drop);
+    top: 8px;
+    right: -10px;
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+#rpm {
+    display: flex;
+    position: absolute;
+    left: 125px;
+    top: -10px;
+    // filter: drop-shadow(15px 8px 6px black);
+    z-index: 10;
+}
+#rpm #gaugerpm {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 10px solid var(--bg);
+    border-bottom: 10px solid transparent;
+    transform: rotate(0deg);
+    display: inline-block;
+    filter: drop-shadow(4px 4px 2px var(--droplight));
+}
+#rpm #needlerpm {
+    width: 2px;
+    height: 25px;
+    background: #fff;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    display: inline-block;
+    left: 30px;
+    position: absolute;
+    top: 5px;
+    transform-origin: bottom;
+    filter: drop-shadow(0px 0px 4px var(--drop));
+}
+#rpm #rpmtxt {
+    font-family: Digit;
+    font-size: 0.4em;
+    position: absolute;
+    bottom: -3px;
+    right: 16px;
+    text-shadow: 2px 2px 2px var(--droplight), 4px 4px 4px var(--drop);
+}
+
+
+
+
+#speedometer {
+    display: flex;
+    position: absolute;
+    // filter: drop-shadow(20px 10px 10px black);
+}
+#speedometer #gaugespeed {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 20px solid var(--bg);
+    border-bottom: 20px solid transparent;
+    transform: rotate(0deg);
+    display: inline-block;
+    filter: drop-shadow(5px 5px 2px var(--droplight));
+}
+#speedometer #speed {
+    direction: rtl;
+    font-family: Digit;
+    display: inline-block;
+    left: 10px;
+    position: absolute;
+    top: 95px;
+    width: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 3px var(--droplight), 4px 4px 6px var(--drop);
+}
+#speedometer #kmh {
+    font-family: Digit;
+    font-size: 0.6em;
+    position: absolute;
+    bottom: -18px;
+    right: -30px;
+    text-shadow: 2px 2px 3px var(--droplight), 3px 3px 4px var(--drop);
+}
+#speedometer #needlespeed {
+    width: 5px;
+    height: 50px;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    display: inline-block;
+    left: 57px;
+    position: absolute;
+    top: 10px;
+    transform-origin: bottom;
+    filter: drop-shadow(0px 0px 6px var(--drop));
+}
+
+
+#gear {
+    // filter: drop-shadow(20px 10px 8px black);
+    font-family: Digit;
+    display: inline-block;
+    font-size: 1.5em;
+    left: 125px;
+    position: absolute;
+    top: 55px;
+    width: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--droplight), 4px 4px 6px var(--droplight);
+}
+
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px)}
+    10% { transform: translate(-1px, -2px)}
+    20% { transform: translate(-3px, 0px)}
+    30% { transform: translate(3px, 2px)}
+    40% { transform: translate(1px, -1px)}
+    50% { transform: translate(-1px, 2px)}
+    60% { transform: translate(-3px, -1px)}
+    70% { transform: translate(3px, 1px)}
+    80% { transform: translate(-1px, -1px)}
+    90% { transform: translate(1px, 2px)}
+    100% { transform: translate(0px, -3px)}
+}
+
+@keyframes crash {
+    0% { transform: rotate(3deg) skew(-5deg) translate(1px, 1px)}
+    10% { transform: rotate(3deg) skew(-5deg) translate(-1px, -1px)}
+    20% { transform: rotate(3deg) skew(-5deg) translate(-3px, 0px)}
+    30% { transform: rotate(3deg) skew(-5deg) translate(3px, 2px)}
+    40% { transform: rotate(3deg) skew(-5deg) translate(1px, -2px)}
+    50% { transform: rotate(3deg) skew(-5deg) translate(-1px, -2px)}
+    60% { transform: rotate(3deg) skew(-5deg) translate(-3px, 1px)}
+    70% { transform: rotate(3deg) skew(-5deg) translate(3px, 1px)}
+    80% { transform: rotate(3deg) skew(-5deg) translate(-1px, -1px)}
+    90% { transform: rotate(3deg) skew(-5deg) translate(1px, 1px)}
+    100% { transform: rotate(3deg) skew(-5deg) translate(0px, 0px)}
+}

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="./listener.js" type="text/javascript"></script>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	<body id="body">
+		<div id="container">
+			<div id="gauges">
+				<div id="oxygen">
+					<svg class="progress-ring" width="60" height="60"> 
+						<circle id="oxygenCircle" class="progress-ring__circle" stroke="#00aeff" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"/>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#fff" fill="#fff" stroke-width="1px" dy=".4em" class="fas" style="font-size: 20px;">&#xf604;</text>
+					</svg>
+				</div>
+				<div id="id">
+					0
+				</div>
+				<div id="hp">
+					<svg class="progress-ring" width="60" height="60"> 
+						<circle id="hpCircle" class="progress-ring__circle" stroke="red" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"/>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#fff" fill="#fff" stroke-width="1px" dy=".4em" class="fas" style="font-size: 20px;">&#xf004;</text>
+					</svg>
+				</div>
+				<div id="food">
+					<svg class="progress-ring" width="60" height="60"> 
+						<circle id="foodCircle" class="progress-ring__circle" stroke="orange" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"/>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#fff" fill="#fff" stroke-width="1px" dy=".4em" class="fal" style="font-size: 20px;">&#xf805;</text>
+					</svg>
+				</div>
+				<div id="water">
+					<svg class="progress-ring" width="60" height="60"> 
+						<circle id="waterCircle" class="progress-ring__circle" stroke="#0077ff" stroke-width="5" fill="transparent" r="25" cx="30" cy="30"/>
+						<text x="50%" y="50%" text-anchor="middle" stroke="#fff" fill="#fff" stroke-width="1px" dy=".4em" class="fal" style="font-size: 20px;">&#xf043;</text>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

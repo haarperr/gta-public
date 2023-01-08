@@ -1,0 +1,54 @@
+:host {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.progressbar {
+    transition: all 0.5s linear;
+    animation: slidein 0.5s forwards;
+    width: 500px;
+    background-color: #333333a1;
+    border: 2px solid #3b78c3;
+    margin: 30px 0;
+    border-radius: 30px;
+}
+
+.progressbar span {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+}
+  
+.progress {
+    // transition: all 10s linear;
+    width: 0%;
+    height: 30px;
+    background-color: #3b78c3;
+    border-radius: 28px;
+}
+
+@keyframes slidein {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideout {
+    to {
+      transform: scale(0);
+      opacity: 0;
+    }
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+}

@@ -1,0 +1,11 @@
+:host {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    width: auto;
+    margin: auto;
+}
+
